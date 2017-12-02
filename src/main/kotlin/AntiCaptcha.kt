@@ -1,9 +1,3 @@
-/**
- *
- *
- * @author markusanderssonnoren
- * @since 2017-12-01.
- */
 package Day1
 
 import java.lang.Integer.parseInt
