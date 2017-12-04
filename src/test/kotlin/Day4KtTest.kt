@@ -29,4 +29,23 @@ class Day4KtTest {
         print(testRow(row))
     }
 
+    @Test
+    fun isAnagram() {
+        print(isAnagram("gtr", "rgt"))
+        print(isAnagram("gtr", "rgtfr"))
+        print(isAnagram("gtrrf", "rfgtr"))
+    }
+
+    @Test
+    fun testRow2() {
+        print(testRow2(formatDay4("a ab abc abd abf abj")[0]))
+        print(testRow2(formatDay4("oiii ioii iioi iiio")[0]))
+    }
+
+    @Test
+    fun day4b() {
+        val resource: URI = Day4KtTest::class.java.getResource("input4.txt").toURI()
+        print(day4b(formatDay4(readFile(resource))))
+    }
+
 }

@@ -30,3 +30,31 @@ fun testRow(row: List<String>): Boolean {
 fun day4(input : List<List<String>>): Int {
     return input.filter { row -> testRow(row) }.size
 }
+
+fun isAnagram(first: String, second: String) : Boolean {
+    if(first.length != second.length)
+        return false
+    val firstLetters = first.toCharArray().toMutableList()
+    val letters = second.toCharArray().iterator()
+    while(letters.hasNext()) {
+        var wasRemoved = firstLetters.remove(letters.next())
+        if (!wasRemoved)
+            return false
+    }
+    return true
+}
+
+fun testRow2(row: List<String>): Boolean {
+    val last: Int = row.size - 1;
+    for ((i, first) in row.withIndex()){
+        for(j in (i+1)..last) {
+            if(isAnagram(first, row[j])) return false
+        }
+    }
+    return true
+}
+
+
+fun day4b(input : List<List<String>>): Int {
+    return input.filter { row -> testRow2(row) }.size
+}
