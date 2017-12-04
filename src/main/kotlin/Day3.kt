@@ -20,7 +20,7 @@ fun getSol (number: Int): Int {
     var direction = Direction.NORTH
     for (i in 3..number) {
         when {
-            // Check is needs turning
+            // Check if needs turning
             p.x.isPositive() && p.y.isPositive() && (p.y.abs == deviation) -> direction = Direction.WEST
             p.x.isNegative() && p.y.isPositive() && (p.x.abs == deviation) -> direction = Direction.SOUTH
             p.x.isNegative() && p.y.isNegative() && (p.y.abs == deviation) -> direction = Direction.EAST
